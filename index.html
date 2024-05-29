@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <style>
+        *{margin: 0;}
+        .visual {
+            background-image: url(images/visual_bg.jpg);
+            background-position: center;
+        }
+        .visual .inner {
+            width: 1920px;
+            margin: 0 auto;
+            height: 626px;
+            position: relative;
+/*             outline: 1px solid blue; */
+        }
+        .visual .title {
+            position: absolute;
+            top: 120px;
+            left: 150px;
+/*             outline: 1px solid blue; */
+        }
+        .visual .burgur {
+            position: absolute;
+            top: 88px;
+            right: 500px;
+/*             outline: 1px solid green; */
+        }
+
+        .visual .logo {
+            position: absolute;
+            bottom: 50px;
+            right: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <section class="visual">
+        
+        <div class="inner">
+            <div class="title fade-in">
+                <img src="images/tittle.png" alt="">
+            </div>
+            <div class="burgur fade-in">
+                <img src="images/burgur.png" alt="" class="cup1 image">
+            </div>
+            <div class="logo fade-in">
+                <img src="images/logo.png" alt="" class="cup1 image">
+            </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        const fadeEls = document.querySelectorAll('.visual .fade-in'); //querySelectorAll을 쓰면 같은 클래스 속성을 가진 걸 여러 개 선택함
+        gsap.from(fadeEls, { //'어디'에서 시작해서 현재 위치로 올 지 정하기
+            duration: 2, //걸리는 시간
+            scale: .3, //시작 스케일 조정
+            ease: 'elastic', //튕기듯이 애니메이션
+            opacity: 0, //투명했다가 나타나게
+            stagger: 0.7 //이 시간 단위로 하나씩 등장함
+        }) 
+    </script>
+
+</body>
+</html>
